@@ -59,7 +59,7 @@ class MyTests(unittest.TestCase):
                          str)
 
     def test_bits_to_chars(self):
-        self.assertEqual(type(bits_to_chars("abcd")),str)
+        self.assertEqual(type(bits_to_chars("0110010100")),str)
 
 if (__name__ == '__main__'):
     unittest.main()
