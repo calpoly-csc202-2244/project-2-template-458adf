@@ -1,6 +1,5 @@
 import unittest
 import math
-import numpy as np
 from main import HLeaf, HNode, HTNode, tree_lt, base_tree_list, tree_list_insert, \
     initial_tree_sort, coalesce_once, coalesce_all, cnt_freq, build_encoder_array, \
     encode_string_one, bits_to_chars
@@ -36,7 +35,7 @@ class MyTests(unittest.TestCase):
         HTNode(HLeaf(0,'a'),HTNode(HLeaf(0,'a'),None))
 
     def test_base_tree_list(self):
-        self.assertEqual(type(base_tree_list(np.array([0 for i in range(256)],dtype=np.int32))),HTNode)
+        self.assertEqual(type(base_tree_list([0 for i in range(256)])),HTNode)
 
     def test_tree_lt_insert(self):
         self.assertEqual(type(tree_list_insert(None,HLeaf(0,'a'))),HTNode)
@@ -51,15 +50,15 @@ class MyTests(unittest.TestCase):
         self.assertEqual(type(coalesce_all(HTNode(HLeaf(0,'a'),HTNode(HLeaf(0,'a'),None)))),HNode)
 
     def test_build_encoder_array(self):
-        build_encoder_array(HLeaf(0,'a'),np.array(["" for i in range(256)],dtype='object'),"")
+        build_encoder_array(HLeaf(0,'a'),["" for i in range(256)],"")
 
     def test_encode_string_one(self):
         self.assertEqual(type(encode_string_one("abcd",
-                                           np.array(["" for i in range(256)],dtype='object'))),
+                                           ["" for i in range(256)])),
                          str)
 
     def test_bits_to_chars(self):
-        self.assertEqual(type(bits_to_chars("0110010100")),str)
+        self.assertEqual(type(bits_to_chars("001010111000")),str)
 
 if (__name__ == '__main__'):
     unittest.main()
