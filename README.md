@@ -1,4 +1,3 @@
-# project-2-template
+# project-huffmann-template
 
-This template includes one nearly-empty file, to be used as the
-container for Project 2.
+This is the template for the huffman coding project
